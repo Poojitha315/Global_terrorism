@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Terrorism Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-blue-600 text-white py-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-2xl font-bold">Global Terrorism Insights</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="home.html" class="hover:underline">Home</a></li>
+                    <li><a href="history.html" class="hover:underline">History</a></li>
+                    <li><a href="countries.html" class="hover:underline">Countries</a></li>
+                    <li><a href="attack_motive.html" class="hover:underline">Attack Motive</a></li>
+                    <li><a href="awareness.html" class="hover:underline">Awareness</a></li>
+                    <li><a href="dashboard.html" class="hover:underline">Dashboard</a></li>
+                    <li><a href="add_user.html" id="addIncidentLink" class="hover:underline">Add Incident</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div id="loginPopup" class="popup hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">Login Required</h2>
+            <form id="loginForm">
+                <input type="text" placeholder="Username" required class="block w-full p-2 mb-2 border rounded">
+                <input type="password" placeholder="Password" required class="block w-full p-2 mb-2 border rounded">
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Login</button>
+                <button type="button" class="ml-2 px-4 py-2 border rounded" onclick="closePopup()">Cancel</button>
+            </form>
+        </div>
+    </div>
+    
+    <main class="container mx-auto p-6 text-center">
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer class="bg-blue-600 text-white text-center py-4 mt-8">
+        <p>&copy; 2025 Global Terrorism Insights. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.getElementById('addIncidentLink').addEventListener('click', (event) => {
+            event.preventDefault();
+            document.getElementById('loginPopup').classList.remove('hidden');
+        });
+        
+        function closePopup() {
+            document.getElementById('loginPopup').classList.add('hidden');
+        }
+        
+        document.getElementById('loginForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            alert('Login successful! You can now add incidents.');
+            closePopup();
+        });
+    </script>
+</body>
+</html>

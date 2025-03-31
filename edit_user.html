@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+ <title>Global Terrorism Insights</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #222;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        header nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        form input, form button {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #222;
+            color: white;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Global Terrorism Insights</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="countries.html">Countries</a>
+            <a href="attack_motive.html">Attack Motive</a>
+            <a href="awareness.html">Awareness</a>
+            <a href="dashboard.html">DashBoard</a>
+             <a href="add_user.html">Add Incident</a>
+
+        </nav>
+    </header>
+<div class="row">
+    <div class="col-5 mx-auto">
+        <h3>EDIT DETAILS</h3><hr>
+        <form method="post" action="{{ url_for('edit_user',sno=datas.SNO) }}">
+            <div class="form-group">
+                <label>region name</label>
+                <input type="text" name="rname" required class="form-control" value='{{datas.RNAME}}'>
+            </div>
+            <div class="form-group">
+                <label>Attack type</label>
+                <input type="text" name="attack_type" required class="form-control" value='{{datas.ATTACK_TYPE}}'>
+            </div>
+            <div class="form-group">
+                <label>cases</label>
+                <input type="text" name="cases" required class="form-control" value='{{datas.CASES}}'>
+            </div>
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+{% endblock %}

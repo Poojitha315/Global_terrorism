@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TERRORIST ATTACK DATASET</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .back-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #222;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        header nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        form input, form button {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #222;
+            color: white;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+  <style>
+        /* Static Background with an Image */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('static/bg.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        /* Page Layout */
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for text readability */
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+            color: #FFD700;
+        }
+
+        p {
+            font-size: 1.4em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .separator {
+            width: 60%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 40px auto;
+            border-radius: 5px;
+        }
+
+        .info-card {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 15px;
+            max-width: 900px;
+            text-align: left;
+            color: #808080;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .info-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .info-card h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+
+        .info-card ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .info-card li {
+            margin: 12px 0;
+        }
+
+        .info-card img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 4px solid #FFD700;
+        }
+
+        .decorative-icon {
+            display: inline-block;
+            font-size: 2em;
+            margin: 0 10px;
+            color: #FFD700;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 1em;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Global Terrorism Insights</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="countries.html">Countries</a>
+            <a href="attack_motive.html">Attack Motive</a>
+            <a href="awareness.html">Awareness</a>
+            <a href="dashboard.html">DashBoard</a>
+            <a href="add_user.html">Add Incident</a>
+
+        </nav>
+    </header>
+    <h1>TERRORIST ATTACK DATASET</h1>
+    <form method="POST">
+        <input type="text" name="search_query" placeholder="Search eventid, iyear, ...">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if not_found_message %}
+        <p>{{ not_found_message }}</p>
+    {% else %}
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Year</th>
+                    <th>Month</th>
+                    <th>Day</th>
+                    <th>Country Name</th>
+                    <th>Region</th>
+                    <th>Region Text</th>
+                    <th>Province/State</th>
+                    <th>City</th>
+                    <th>Target Type</th>
+                    <th>Target Subtype</th>
+                    <th>Corporation</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for country in countries %}
+                <tr>
+                    <td>{{ country['eventid'] }}</td>
+                    <td>{{ country['iyear'] }}</td>
+                    <td>{{ country['imonth'] }}</td>
+                    <td>{{ country['iday'] }}</td>
+                    <td>{{ country['country_name'] }}</td>
+                    <td>{{ country['region'] }}</td>
+                    <td>{{ country['region_txt'] }}</td>
+                    <td>{{ country['provstate'] }}</td>
+                    <td>{{ country['city'] }}</td>
+                    <td>{{ country['targettype_txt'] }}</td>
+                    <td>{{ country['targetsubttype_txt'] }}</td>
+                    <td>{{ country['corp1'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+<a href="javascript:history.back()" class="back-button">Back</a>
+</body>
+</html>
