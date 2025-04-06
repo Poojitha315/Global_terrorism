@@ -2,7 +2,7 @@ from flask import Flask,render_template,request,redirect,url_for,flash
 import sqlite3 as sql
 import sqlite3
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='my_html')
 
 
 @app.route("/index")
