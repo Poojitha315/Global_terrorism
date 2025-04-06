@@ -72,7 +72,7 @@ def history():
     return render_template('history.html')
 
 
-@app.route('/attack-motive')
+@app.route('/attack_motive')
 def attack_motive():
     return render_template('attack_motive.html')
 
