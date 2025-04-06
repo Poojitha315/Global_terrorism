@@ -1,0 +1,140 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<style>
+table {
+            border-collapse: collapse;
+            width: 100%;
+
+
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: white;
+        }
+        tr:nth-child(odd) {
+            background-color: white;
+        }
+
+
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .back-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 10px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background: url('static/bg.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        header nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        form input, form button {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #222;
+            color: white;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+
+<body>
+    <header>
+        <h1>Global Terrorism Insights</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/history">History</a>
+            <a href="/countries">Countries</a>
+            <a href="/attack-motive">Attack Motive</a>
+            <a href="/awareness">Awareness</a>
+             <a href="{{ url_for('index') }}">User details</a>
+
+        </nav>
+    </header>
+    <p class="text-right"><a href="{{ url_for('add_user') }}" class="btn btn-success">+Add User</a></p>
+<table class="table table-bordered">
+    <thead>
+        <th>SNo</th>
+        <th>UNAME</th>
+        <th>EMAIL_ID</th>
+        <th>AGE</th>
+        <th>COUNTRY</th>
+        <th>CONTACT</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        {% for row in datas %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ row.UNAME }}</td>
+            <td>{{ row.EMAIL_ID }}</td>
+            <td>{{ row.AGE }}</td>
+            <td>{{ row.COUNTRY }}</td>
+            <td>{{ row.CONTACT }}</td>
+            <td><a href='{{ url_for("edit_user",uid=row.UID)}}' class="btn btn-primary">Edit</a></td>
+            <td><a href='{{ url_for("delete_user",uid=row.UID)}}' class="btn btn-danger" onclick='return confirm("Are you sure")'>Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

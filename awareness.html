@@ -1,0 +1,463 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Terrorism Awareness</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Animated Background */
+        body {
+            background: linear-gradient(120deg, #2c3e50, #bdc3c7);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            color: #fff;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 50px 10px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #f39c12;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #ecf0f1;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 50px 40px;
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #f1c40f;
+            margin-bottom: 30px;
+        }
+
+        .statistics {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            color: #ecf0f1;
+        }
+
+        .statistics .stat-box {
+            padding: 50px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-box h4 {
+            font-size: 2rem;
+            color: #2ecc71;
+        }
+
+        .info-box {
+            margin: 20px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: #ecf0f1;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .call-to-action {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+            border-radius: 10px;
+        }
+
+        .cta-button {
+            background: #e74c3c;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #c0392b;
+        }
+
+        /* Animations */
+        .section {
+            animation: fadeIn 1.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Video Section */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px auto;
+        }
+
+        .video-container iframe {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <style>
+        /* Static Background with an Image */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('static/bg.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        /* Page Layout */
+        .container {
+            width:70%;
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for text readability */
+            border-radius: 15px;
+            margin: 150px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+            color: #FFD700;
+        }
+
+        p {
+            font-size: 1.4em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .separator {
+            width: 60%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 40px auto;
+            border-radius: 5px;
+        }
+
+        .info-card {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 15px;
+            max-width: 900px;
+            text-align: left;
+            color: #f0f0f0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .info-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .info-card h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+
+        .info-card ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .info-card li {
+            margin: 12px 0;
+        }
+
+        .info-card img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 4px solid #FFD700;
+        }
+
+        .decorative-icon {
+            display: inline-block;
+            font-size: 2em;
+            margin: 0 10px;
+            color: #FFD700;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 1em;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding-bottom: 20px;
+        }
+    </style>
+    <style>
+        /* Static Background with an Image */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('static/bg.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        /* Page Layout */
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for text readability */
+            border-radius: 10px;
+            margin: 150px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+            color: #FFD700;
+        }
+
+        p {
+            font-size: 1.4em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .separator {
+            width: 60%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 40px auto;
+            border-radius: 5px;
+        }
+
+        .info-card {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 15px;
+            max-width: 900px;
+            text-align: left;
+            color: #808080;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .info-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .info-card h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+
+        .info-card ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .info-card li {
+            margin: 12px 0;
+        }
+
+        .info-card img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 4px solid #FFD700;
+        }
+
+        .decorative-icon {
+            display: inline-block;
+            font-size: 2em;
+            margin: 0 10px;
+            color: #FFD700;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 1em;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding-bottom: 20px;
+        }
+    </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        header nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        form input, form button {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+
+            color: white;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Global Terrorism Insights</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/history">History</a>
+            <a href="/countries">Countries</a>
+            <a href="/attack-motive">Attack Motive</a>
+            <a href="/awareness">Awareness</a>
+            <a href="{{ url_for('index') }}">User details</a>
+
+        </nav>
+    </header>
+    <nav style=" padding: 10px; text-align: center;">
+    </nav>
+
+
+<header>
+    <h1>Global Terrorism Awareness</h1>
+    <p>Empowering communities to fight terrorism through education and collective action.</p>
+</header>
+
+<div class="container">
+    <!-- Section: What is Terrorism? -->
+    <div class="section">
+        <h2>What is Terrorism?</h2>
+        <p>Terrorism affects every corner of the globe, threatening peace and security. It involves violent acts intended to create fear, disrupt communities, and achieve political, ideological, or religious goals.</p>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="section">
+        <h2>Global Statistics</h2>
+        <div class="statistics">
+            <div class="stat-box">
+                <h4>25,000+</h4>
+                <p>Lives lost to terrorism annually.</p>
+            </div>
+            <div class="stat-box">
+                <h4>80+</h4>
+                <p>Countries impacted in the last decade.</p>
+            </div>
+            <div class="stat-box">
+                <h4>40%</h4>
+                <p>Rise in cyber-terrorism over the last 5 years.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Section -->
+    <!-- Section: Future Trends -->
+    <div class="section">
+        <h2>Future Trends in Terrorism</h2>
+        <p>Advancing technologies are being leveraged by terrorist groups in increasingly sophisticated ways. Future trends include:</p>
+        <ul>
+            <li><strong>Cyber Terrorism:</strong> Targeting national infrastructures and databases.</li>
+            <li><strong>Bioterrorism:</strong> Using biological agents to spread fear and disease.</li>
+            <li><strong>Drone Warfare:</strong> Deploying unmanned vehicles for attacks.</li>
+        </ul>
+    </div>
+
+    <!-- Call-to-Action Section -->
+    <div class="call-to-action">
+        <h2>Join the Fight Against Terrorism</h2>
+        <p>Your actions can make a difference. Get involved today to build a safer and more peaceful world.</p>
+        <button class="cta-button" onclick="window.location.href='/get'">Get Involved</button>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
